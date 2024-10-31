@@ -4,3 +4,37 @@
 TODO: Add default styling/normalisations
 TODO: Add global colour variables to be used for all websites
 */
+
+
+/* More info - https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing . The pseudo elements are targeted too, since they do not inherit the box-sizing property. */
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  /* Expand to the full height of the window, in case there is no enough content. */
+  min-height: 100dvh;
+
+  /* Disable blue highlight on chrome (mobile) */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* These elements are mostly given a pointer style. */
+button,
+summary,
+label {
+  cursor: pointer;
+}
+
+img,
+svg {
+  /* When the width of the targeted elements is not set, it is better to constrain it, to avoid an overflow. */
+  max-width: 100%;
+}
+
+/* Fix the bottom space under images. See the explanation here - https://youtu.be/plOl7TNc89A?t=11 */
+img {
+  display: block;
+}
